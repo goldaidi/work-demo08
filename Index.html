@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- icon -->
+    <script src="https://kit.fontawesome.com/eecb5127e2.js" crossorigin="anonymous"></script>
+    <script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+    <!-- Bootstrap CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+<style>
+    body {
+        margin: 0 0 0;
+    }
+    img {
+        max-width: 100%;
+    }
+    .img-icon {
+        width:70px;
+    }
+    .bg_dark {
+        background-color: #222;
+    }
+    .bg_gray {
+        background-color: #ececec;
+    }
+    .bg_blue {
+        background-color: #00204d;
+    }
+    .bg-partner {
+        background-image: url("img/a0rd8-b5nmd.jpg");
+        background-position: bottom bottom;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 250px;
+    }
+
+    /* font_style */
+    .txt-title {
+        display: inline-block;
+        font-size: 1.8em;
+        line-height: 1.4;
+        color: #00204d;
+    }
+    .txt-lg {
+        font-size: 1.6em;
+        color: #00204d;
+    }
+    .txt-md {
+        font-size: 1.2em;
+        color: #00204d;
+    }
+    .txt-sm {
+        font-size: 1.1em !important;
+    }
+    .txt-sm2 {
+        font-size: 1em !important;
+    }
+    .txt-xs {
+        font-size: 0.8em !important;
+    }
+    .txt-white {
+        color: #ffffff !important;
+    }
+    .txt-gray {
+        color: #cccccc !important;
+    }
+    .txt-red {
+        color: #ff0000 !important;
+    }
+    .txt-green {
+        color: #93b823 !important;
+    }
+    .txt-shadow {
+        text-shadow:2px 2px 3px rgba(0,0,0,.5);
+    }
+    .txt-bold {
+        font-weight: bold;
+    }
+    .txt-center {
+        text-align: center;
+    }
+    
+    /* table */
+    .table-responsive {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+    }
+    .header-fixed {
+        /*視情況關掉*/
+        width: 100% !important;
+        text-align: center;
+    }
+    .header-fixed th {
+        height: 60px;
+        font-weight: bold;
+        padding: 0 1em;
+    }
+    .header-fixed td {
+        height: 40px;
+        border-bottom: 1px solid #ccc;
+        padding: 0 1em;
+    }
+    .tablesub {
+        text-align: left;
+    }
+    .tablecenter {
+        text-align: center;
+    }
+    .checkyes {
+        color: #9bc225;
+        font-size: 1.2em;
+        text-align: center;
+    }
+    .checkno {
+        color: #cccccc;
+        font-size: 1.2em;
+        text-align: center;
+    }
+    @media screen and (max-width: 736px) {
+        .header-fixed tbody tr td:first-child {
+            width: 100% !important;
+        }
+        .tablesub em {
+            display: block;
+        }
+    }
+
+    hr {
+        color:#ccc;
+    }
+
+    .feature-green {
+        display: inline-block;
+        background-color: #9bc225;
+        color:#fff;
+        border-radius: 3px;
+        padding: 0 8px;
+        margin-bottom: 5px;
+    }
+
+    .top-btn {
+        border-radius: 5px;
+        padding: 8px 12px;
+        border: 1px solid #0065e3;
+        background-color: #0065e3;
+        color: #fff;
+        margin: 20px 0;
+        text-decoration: none;
+    }
+    .top-btn:nth-child(2) {
+        border-radius: 5px;
+        padding: 8px 12px;
+        border: 1px solid #9bc225;
+        background-color: #9bc225;
+        color: #fff;
+        margin: 20px 12px;
+        text-decoration: none;
+    }
+    .top-btn:hover {
+        color: #fff;
+        text-decoration: underline;
+    }
+
+    .more-btn {
+        border-radius: 20px;
+        padding: 5px 20px;
+        border: 1px solid #ccc;
+        margin: 20px 0;
+        text-decoration: none;
+    }
+    .more-btn:hover {
+        text-decoration: underline;
+    }
+
+    .contact-btn {
+        border-radius: 20px;
+        padding: 8px 30px 8px 0px;
+        border: 1px solid #00204d;
+        background-color: #00204d;
+        color: #fff;
+        margin: 20px 0;
+        text-decoration: none;
+    }
+    .contactme:hover .contact-btn {
+        padding: 8px 30px 8px 20px;
+        color: #fff;
+        margin: 20px 0;
+        text-decoration: none;
+        transition: .3s all;
+    }
+    .contact-icon {
+        opacity: 0;
+    }
+    .contactme:hover .contact-icon {
+        opacity: 1;
+        transform: translateX(5px);
+        transition: .2s all;
+    }
+</style>
+</head>
+<body>
+    <section class="bg_blue mb-5 py-3">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12 col-md-6 d-flex flex-column justify-content-center">
+                    <h1 class="txt-title txt-white">Advanced Cyber Security</h1>
+                    <p class="txt-md txt-green">包含 Acronis Cyber Backup Cloud 的所有功能</p>
+                    <div style="padding-bottom: 1em;">
+                        <a href="https://www.bvtl.com.tw/contactus/" class="top-btn">聯絡我們</a>
+                        <a href="https://www.bvtl.com.tw/acronis-cyber-protect-cloud/" class="top-btn">了解更多</a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <img src="img/ag7ct-5v8qc.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 2 -->
+    <section class="container mb-5">
+        <div class="row mb-5">
+            <div class="col-12 col-md-6 order-2 order-md-1">
+                <h2 class="txt-title my-3">探索可抵禦現今網路威脅的全方位防禦機制</h2>
+                <p class="txt-md">以更少的資源，為客戶抵禦更多的網路威脅。Advanced Security 附加元件延伸 Acronis Cyber Protect Cloud 的端點防護功能，讓您透過增强的反惡意軟體防護和修復服務減少對客戶造成的風險。進階整合與自動化簡化了部署、設定和管理工作。</p>
+            </div>
+            <div class="col-12 col-md-5 offset-md-1 order-1 order-md-2">
+                <iframe style="width: 100%;height:100%;" src="https://www.youtube.com/embed/hL1953ungUU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-4">
+                <h3 class="txt-md txt-bold">Acronis Active Protection 技術</h3>
+                <p class="txt-sm">Acronis Active Protection 技術增強了入侵預防、URL 篩選、針對備份資料的防勒索軟體和防惡意軟體偵測，並提高了偵測率，以便更快地揪出更多威脅。</p>
+            </div>
+            <div class="col-12 col-md-4">
+                <h3 class="txt-md txt-bold">安全性自動化</h3>
+                <p class="txt-sm">智慧簡單的防護政策管理、自動允許清單、自訂應用程式、自動惡意軟體掃描和 AV 定義更新，作爲復原流程一部分以更輕鬆地提供服務。</p>
+            </div>
+            <div class="col-12 col-md-4">
+                <h3 class="txt-md txt-bold">高效鑑定</h3>
+                <p class="txt-sm">收集數位證據並將其儲存在一個安全的集中式存放庫，以進行全面的事後調查和正確的修復，同時壓低成本。</p>
+            </div>
+        </div>
+    </section><hr>
+    <section class="container mb-5">
+        <h2 class="txt-title my-3">以採用 AI 技術的下一代網路防護為基礎打造</h2>
+        <p class="txt-md">以單一網路防護解決方案 Acronis Cyber Protect Cloud 將客戶的風險降至最低。該解決方案兼備同類型最佳的備份和復原、端點防護管理和網路安全防護，並整合可抵禦勒索軟體和零時差攻擊的反惡意軟體技術，能與客戶目前的防毒軟體相輔相成。透過 Advanced Security 的完整堆疊反惡意軟體强化客戶的防護措施，以我們經過實證的整合式網路防護取代其防毒軟體。</p>
+    </section>
+    <section class="container mb-5">
+        <div class="table-responsive">
+			<table border="0" cellspacing="0" cellspadding="0" class="header-fixed">
+				<thead>
+					<tr>
+						<th class="tablesub">功能</th>
+						<th class="va">Acronis Cyber Protect Cloud</th>
+						<th class="vb">搭配 Advanced Security</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="tablesub">Acronis Active Protection：新一代的行為式技術，旨在主動阻止網路威脅，重點關注勒索軟體和零時差攻擊</td>
+						<td class="checkyes"><img src="img/itctx-11-check.png" alt=""></td>
+						<td class="checkyes"><img src="img/itctx-11-check.png" alt=""></td>
+					</tr>
+					<tr>
+						<td class="tablesub">弱點評估</td>
+						<td class="checkyes"><img src="img/itctx-11-check.png" alt=""></td>
+						<td class="checkyes"><img src="img/itctx-11-check.png" alt=""></td>
+					</tr>
+					<tr>
+						<td class="tablesub">透過裝置控制進行資料遺失防護 (DLP)</td>
+						<td class="checkyes"><img src="img/itctx-11-check.png" alt=""></td>
+						<td class="checkyes"><img src="img/itctx-11-check.png" alt=""></td>
+					</tr>
+					<tr>
+						<td class="tablesub">備份和復原</td>
+						<td class="checkyes"><img src="img/itctx-11-check.png" alt=""></td>
+						<td class="checkyes"><img src="img/itctx-11-check.png" alt=""></td>
+					</tr>
+					<tr>
+						<td class="tablesub">在勒索軟體攻擊後自動復原資料</td>
+						<td class="checkno"><img src="img/itctx-11-check.png" alt=""></td>
+						<td class="checkyes"><img src="img/itctx-11-check.png" alt=""></td>
+					</tr>
+					<tr>
+						<td class="tablesub">採用 #CyberFit Score 進行安全漏洞識別</td>
+						<td class="checkno"><img src="img/itctx-11-check.png" alt=""></td>
+						<td class="checkyes"><img src="img/itctx-11-check.png" alt=""></td>
+					</tr>
+					<tr>
+						<td class="tablesub">完整堆疊的反惡意軟體防護：採用多個防禦層的即時防護，涵蓋多個攻擊媒介</td>
+						<td class="checkno"><i class="fas fa-window-minimize"></i></td>
+						<td class="checkyes"><img src="img/itctx-11-check.png" alt=""></td>
+					</tr>
+					<tr>
+						<td class="tablesub">URL 篩選：封鎖惡意 URL、Web 型攻擊和 COVID-19 詐騙</td>
+						<td class="checkno"><i class="fas fa-window-minimize"></i></td>
+						<td class="checkyes"><img src="img/itctx-11-check.png" alt=""></td>
+					</tr>
+                    <tr>
+						<td class="tablesub">防止入侵：基於行為的偵測啟發學習法可預防未知弱點的入侵，包括記憶體入侵和插入</td>
+						<td class="checkno"><i class="fas fa-window-minimize"></i></td>
+						<td class="checkyes"><img src="img/itctx-11-check.png" alt=""></td>
+					</tr>
+                    <tr>
+						<td class="tablesub">對 Acronis Cloud 中的資料進行防惡意軟體掃描：卸載用戶端端點以啟用更積極的掃描，從而確保無惡意軟體的備份</td>
+						<td class="checkno"><i class="fas fa-window-minimize"></i></td>
+						<td class="checkyes"><img src="img/itctx-11-check.png" alt=""></td>
+					</tr>
+                    <tr>
+						<td class="tablesub">備份中的鑑定資料：收集數位證據以加快修復速度並降低其成本</td>
+						<td class="checkno"><i class="fas fa-window-minimize"></i></td>
+						<td class="checkyes"><img src="img/itctx-11-check.png" alt=""></td>
+					</tr>
+                    <tr>
+						<td class="tablesub">CPOC 威脅動態：更快速地回應新出現的威脅並獲取修復建議
+                        </td><td class="checkno"><i class="fas fa-window-minimize"></i></td>
+						<td class="checkyes"><img src="img/itctx-11-check.png" alt=""></td>
+					</tr>
+                    <tr>
+						<td class="tablesub">自動設定允許清單：減少誤判並實現更積極的掃描</td>
+						<td class="checkno"><i class="fas fa-window-minimize"></i></td>
+						<td class="checkyes"><img src="img/itctx-11-check.png" alt=""></td>
+					</tr>
+                    <tr>
+						<td class="tablesub">惡意軟體再次感染防護：在復原期間掃描惡意軟體並更新 AV 定義，預防威脅再次發生</td>
+						<td class="checkno"><i class="fas fa-window-minimize"></i></td>
+						<td class="checkyes"><img src="img/itctx-11-check.png" alt=""></td>
+					</tr>
+				</tbody>
+			</table>
+        </div>
+    </section>
+    <section class="container mb-5">
+        <h2 class="txt-lg txt-bold pb-3">藉由進階防護套件擴展您的服務</h2>
+        <p class="txt-sm">新增了其他功能强大的元件，藉由進階防護套件和獨特的網路防護功能來進一步强化您的服務。透過僅為客戶需要的功能付費來控制成本。</p>
+        <div class="row">
+            <div class="col-12 col-md-5 order-2 order-md-1">
+                <div class="accordion accordion-flush" id="accordionFlushExample">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-headingOne">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                        Advanced Security
+                        </button>
+                      </h2>
+                      <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <p class="txt-sm2">用包含完整堆疊防惡意軟體的整合式網路防護來提升安全性服務。提高對最新網路威脅的偵測率和回應能力。將網路防護延伸至網頁瀏覽、備份的資料、復原流程以及攻擊預防。透過擷取備份中的鑑定資料來實施調查。</p>
+                            <ul>
+                                <li>完整堆疊的反惡意軟體</li>
+                                <li>URL 篩選</li>
+                                <li>防止入侵</li>
+                            </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                        Advanced Backup
+                        </button>
+                      </h2>
+                      <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <p class="txt-sm2">保護客戶資料，即使在排定的兩次備份期間。將備份功能延伸至 SAP HANA、Oracle DB、MariaDB、MySQL 及應用程式叢集。您也可以掌握客戶基礎架構中的資料保護狀態。</p>
+                            <ul>
+                                <li>持續資料防護</li>
+                                <li>資料保護圖</li>
+                                <li>脫離主機資料處理</li>
+                            </ul>
+                            <a class="more-btn" href="https://www.bvtl.com.tw/advanced-cloud-backup/">瞭解更多</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                        Advanced Disaster Recovery
+                        </button>
+                      </h2>
+                      <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <p class="txt-sm2">當災難發生時，於 Acronis Cloud 中恢復系統運作，並將系統還原到任何位置，在短短幾分鐘之內讓客戶恢復營運，確保了即時資料可用性。藉由協作、Runbook 與自動化容錯移轉，搞定棘手的災難復原並提高了效率。</p>
+                            <ul>
+                                <li>災難復原協調</li>
+                                <li>生產容錯移轉</li>
+                                <li>站對站 VPN</li>
+                            </ul>
+                            <a class="more-btn" href="https://www.bvtl.com.tw/advanced-disaster-recovery/">瞭解更多</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingfour">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsefour" aria-expanded="false" aria-controls="flush-collapsefour">
+                        Advanced Email Security
+                        </button>
+                        </h2>
+                        <div id="flush-collapsefour" class="accordion-collapse collapse" aria-labelledby="flush-headingfour" data-bs-parent="#accordionFlushExample">
+                          <div class="accordion-body">
+                            <p class="txt-sm2">在所有電子郵件威脅接觸到終端使用者之前就搶先封鎖，包括垃圾郵件、網路釣魚、商務電子郵件入侵 (BEC)、進階持續性威脅 (APT) 與零時差攻擊都不放過。利用 Perception Point 的新世代技術，迅速偵測並輕鬆部署、設定與管理。</p>
+                            <ul>
+                                <li>防網路釣魚與防詐騙引擎</li>
+                                <li>防規避技術</li>
+                                <li>鎖定零時差攻擊的新世代動態偵測功能</li>
+                            </ul>
+                            <a class="more-btn" href="https://www.bvtl.com.tw/advanced-email-security/">瞭解更多</a>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingfive">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsefive" aria-expanded="false" aria-controls="flush-collapsefive">
+                        Advanced Data Loss Prevention (DLP)
+                        </button>
+                        </h2>
+                        <div id="flush-collapsefive" class="accordion-collapse collapse" aria-labelledby="flush-headingfive" data-bs-parent="#accordionFlushExample">
+                          <div class="accordion-body">
+                            <p class="txt-sm2">防止敏感資料透過週邊裝置和網路通訊從客戶的工作負載中外洩。透過觀察敏感資料的傳輸簡化 DLP 服務的佈建和管理，以自動將 DLP 原則對應到客戶的業務細節。</p>
+                            <ul>
+                                <li>資料外洩防護</li>
+                                <li>自動初始 DLP 原則建立</li>
+                                <li>強制執行的 DLP 原則的自動化、使用者協助的延伸</li>
+                            </ul>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingsix">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsesix" aria-expanded="false" aria-controls="flush-collapsesix">
+                        Advanced File Sync and Share
+                        </button>
+                        </h2>
+                        <div id="flush-collapsesix" class="accordion-collapse collapse" aria-labelledby="flush-headingsix" data-bs-parent="#accordionFlushExample">
+                          <div class="accordion-body">
+                            <p class="txt-sm2">使用檔案同步和共用服務取得資料位置、管理和隱私的完整控制權，包括支援在所有平台進行公證和電子簽名功能的交易總帳。</p>
+                                <ul>
+                                    <li>檔案公證</li>
+                                    <li>內嵌電子簽名</li>
+                                    <li>獨立檔案驗證</li>
+                                </ul>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingseven">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseseven" aria-expanded="false" aria-controls="flush-collapseseven">
+                        Advanced Management
+                        </button>
+                        </h2>
+                        <div id="flush-collapseseven" class="accordion-collapse collapse" aria-labelledby="flush-headingseven" data-bs-parent="#accordionFlushExample">
+                          <div class="accordion-body">
+                            <p class="txt-sm2">透過修補程式管理，簡化弱點管理並迅速消除了客戶 IT 基礎架構中的漏洞。獲得深入客戶之軟體資產和資料防護的能見度以減輕每日追蹤和規劃工作，並透過監控磁碟機的健康狀況來改善客戶的正常運作時間。</p>
+                            <ul>
+                                <li>修補程式管理</li>
+                                <li>防故障修補</li>
+                                <li>磁碟機健康狀況監控</li>
+                            </ul>
+                            <a class="more-btn" href="https://www.bvtl.com.tw/advanced-management/">瞭解更多</a>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-5 offset-md-1 order-1 order-md-2">
+                <img src="img/avh6r-1x7sp1.png" alt="">
+            </div>
+        </div>
+    </section>
+    <section class="container mb-3">
+        <h2 class="txt-title my-3">提供經證實、獲獎肯定的端點防護</h2>
+        <div class="row">
+            <div class="p-3 col-12 col-md-2">
+                <div style="height:90px;"><img src="https://www.bvtl.com.tw/wp-content/uploads/2022/06/ASaward01.png" alt=""></div>
+                <p class="txt-sm2">VirusTotal member</p>
+            </div>
+            <div class="p-3 col-12 col-md-2">
+                <div style="height:90px;"><img src="https://www.bvtl.com.tw/wp-content/uploads/2022/06/ASaward02.png" alt=""></div>
+                <p class="txt-sm2">Cloud Security Alliance member</p>
+            </div>
+            <div class="p-3 col-12 col-md-2">
+                <div style="height:90px;"><img src="https://www.bvtl.com.tw/wp-content/uploads/2022/06/ASaward03.png" alt=""></div>
+                <p class="txt-sm2">Anti-Phishing Working Group member</p>
+            </div>
+            <div class="p-3 col-12 col-md-2">
+                <div style="height:90px;"><img src="https://www.bvtl.com.tw/wp-content/uploads/2022/06/ASaward04.png" alt=""></div>
+                <p class="txt-sm2">Microsoft Virus Initiative member</p>
+            </div>
+            <div class="p-3 col-12 col-md-2">
+                <div style="height:90px;"><img src="https://www.bvtl.com.tw/wp-content/uploads/2022/06/ASaward05.png" alt=""></div>
+                <p class="txt-sm2">CRN 2020 Partner Program Guide: 5 Star Data Storage and Backup Vendors</p>
+            </div>
+        </div>
+    </section>
+    <section class="container mb-5">
+        <h2 class="txt-title my-3">完整堆疊的進階惡意軟體防護</h2>
+        <p class="txt-md">以單一整合式網路防護解決方案取代非整合式防毒工具並為客戶提供保護，該解決方案能阻止當今的複雜網路威脅，並確保修復作業順利完成，同時消除客戶費心挑選多種解決方案的必要。</p>
+        <div class="row mb-5">
+            <div class="col-12 col-md-4 my-3">
+                <div class="d-flex justify-content-start mb-3">
+                    <img src="https://www.bvtl.com.tw/wp-content/uploads/2022/06/01ASicon.png" class="img-icon" alt="">
+                </div>
+                <h3 class="txt-md txt-bold">反惡意軟體技術</h3>
+                <p class="txt-sm">運用功能强大的 AI 型、簽名型、行為型偵測和 URL 篩選來即時阻止惡意軟體。</p>
+            </div>
+            <div class="col-12 col-md-4 my-3">
+                <div class="d-flex justify-content-start mb-3">
+                    <img src="https://www.bvtl.com.tw/wp-content/uploads/2022/06/02ASicon.png" class="img-icon" alt="">
+                </div>
+                <h3 class="txt-md txt-bold">防止入侵</h3>
+                <p class="txt-sm">防範零時差弱點和惡意探索，包括記憶體攻擊。</p>
+            </div>
+            <div class="col-12 col-md-4 my-3">
+                <div class="d-flex justify-content-start mb-3">
+                    <img src="https://www.bvtl.com.tw/wp-content/uploads/2022/06/03ASicon.png" class="img-icon" alt="">
+                </div>
+                <h3 class="txt-md txt-bold">保護備份中的資料</h3>
+                <p class="txt-sm">在 Acronis Cloud 中運用已備份資料的更積極掃描，減少客戶端點上的負載並確保乾淨資料的復原。</p>
+            </div>
+        </div>
+    </section><hr>
+    <section class="container mb-5">
+        <h2 class="txt-title my-3">藉由進階端點防護抵禦現今的網路威脅</h2>
+            <div class="row mb-5">
+                <div class="col-6 col-md-3">
+                    <div class="feature-green txt-xs" style="visibility:hidden;">特色</div>
+                    <h3 class="txt-md txt-bold">完整堆疊的反惡意軟體</h3>
+                    <p class="txt-sm">藉由增强的反惡意軟體技術最小化客戶系統的攻擊面。透過一組升級的惡意軟體簽名提高偵測的速度和準確性。即時抵禦零時差攻擊和記憶體攻擊。掃描已備份的資料中有無惡意軟體。</p>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="feature-green txt-xs">特色</div>
+                    <h3 class="txt-md txt-bold">安全復原</h3>
+                    <p class="txt-sm">藉由 Acronis 的特有安全復原技術，防止發生反覆危險感染。在復原過程中，整合式解決方案會掃描備份有無惡意軟體，安裝最新的安全性修補程式，並更新其防毒資料庫。</p>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="feature-green txt-xs">特色</div>
+                    <h3 class="txt-md txt-bold">備份中的鑑定資料</h3>
+                    <p class="txt-sm">收集諸如記憶體傾印和處理程序資訊之類的數位證據並將其儲存在一個安全的集中式存放庫，藉此減少維護合規和執行未來事件調查的成本。</p>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="feature-green txt-xs">特色</div>
+                    <h3 class="txt-md txt-bold">智慧防護計畫</h3>
+                    <p class="txt-sm">Acronis Cyber Protection Operation Center (CPOC) 持續監控網路安全態勢，針對惡意軟體、弱點或自然災害等新與威脅發佈警示。自動調整防護計畫，主動解決這些威脅。</p>
+                </div>
+            </div>
+    </section><hr>
+    <section class="container mb-5">
+        <h2 class="txt-lg txt-bold pb-3">藉由進階防護套件擴展您的服務</h2>
+        <p class="txt-sm">新增了其他功能强大的元件，藉由進階防護套件和獨特的網路防護功能來進一步强化您的服務。透過僅為客戶需要的功能付費來控制成本。</p>
+        <div class="row">
+            <div class="col-12 col-md-5 order-2 order-md-1">
+                <div class="accordion accordion-flush" id="accordionFlushExample">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-headingOne">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                        Advanced Security
+                        </button>
+                      </h2>
+                      <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <p class="txt-sm2">用包含完整堆疊防惡意軟體的整合式網路防護來提升安全性服務。提高對最新網路威脅的偵測率和回應能力。將網路防護延伸至網頁瀏覽、備份的資料、復原流程以及攻擊預防。透過擷取備份中的鑑定資料來實施調查。</p>
+                            <ul>
+                                <li>完整堆疊的反惡意軟體</li>
+                                <li>URL 篩選</li>
+                                <li>防止入侵</li>
+                            </ul>
+                            <a class="more-btn" href="https://www.bvtl.com.tw/advanced-security/">瞭解更多</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                        Advanced Backup
+                        </button>
+                      </h2>
+                      <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <p class="txt-sm2">保護客戶資料，即使在排定的兩次備份期間。將備份功能延伸至 SAP HANA、Oracle DB、MariaDB、MySQL 及應用程式叢集。您也可以掌握客戶基礎架構中的資料保護狀態。</p>
+                            <ul>
+                                <li>持續資料防護</li>
+                                <li>資料保護圖</li>
+                                <li>脫離主機資料處理</li>
+                            </ul>
+                            <a class="more-btn" href="https://www.bvtl.com.tw/advanced-cloud-backup/">瞭解更多</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                        Advanced Disaster Recovery
+                        </button>
+                      </h2>
+                      <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <p class="txt-sm2">當災難發生時，於 Acronis Cloud 中恢復系統運作，並將系統還原到任何位置，在短短幾分鐘之內讓客戶恢復營運，確保了即時資料可用性。藉由協作、Runbook 與自動化容錯移轉，搞定棘手的災難復原並提高了效率。</p>
+                            <ul>
+                                <li>災難復原協調</li>
+                                <li>生產容錯移轉</li>
+                                <li>站對站 VPN</li>
+                            </ul>
+                            <a class="more-btn" href="https://www.bvtl.com.tw/advanced-disaster-recovery/">瞭解更多</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingfour">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsefour" aria-expanded="false" aria-controls="flush-collapsefour">
+                        Advanced Email Security
+                        </button>
+                        </h2>
+                        <div id="flush-collapsefour" class="accordion-collapse collapse" aria-labelledby="flush-headingfour" data-bs-parent="#accordionFlushExample">
+                          <div class="accordion-body">
+                            <p class="txt-sm2">在所有電子郵件威脅接觸到終端使用者之前就搶先封鎖，包括垃圾郵件、網路釣魚、商務電子郵件入侵 (BEC)、進階持續性威脅 (APT) 與零時差攻擊都不放過。利用 Perception Point 的新世代技術，迅速偵測並輕鬆部署、設定與管理。</p>
+                            <ul>
+                                <li>防網路釣魚與防詐騙引擎</li>
+                                <li>防規避技術</li>
+                                <li>鎖定零時差攻擊的新世代動態偵測功能</li>
+                            </ul>
+                            <a class="more-btn" href="https://www.bvtl.com.tw/advanced-email-security/">瞭解更多</a>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingfive">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsefive" aria-expanded="false" aria-controls="flush-collapsefive">
+                        Advanced Data Loss Prevention (DLP)
+                        </button>
+                        </h2>
+                        <div id="flush-collapsefive" class="accordion-collapse collapse" aria-labelledby="flush-headingfive" data-bs-parent="#accordionFlushExample">
+                          <div class="accordion-body">
+                            <p class="txt-sm2">防止敏感資料透過週邊裝置和網路通訊從客戶的工作負載中外洩。透過觀察敏感資料的傳輸簡化 DLP 服務的佈建和管理，以自動將 DLP 原則對應到客戶的業務細節。</p>
+                            <ul>
+                                <li>資料外洩防護</li>
+                                <li>自動初始 DLP 原則建立</li>
+                                <li>強制執行的 DLP 原則的自動化、使用者協助的延伸</li>
+                            </ul>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingsix">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsesix" aria-expanded="false" aria-controls="flush-collapsesix">
+                        Advanced File Sync and Share
+                        </button>
+                        </h2>
+                        <div id="flush-collapsesix" class="accordion-collapse collapse" aria-labelledby="flush-headingsix" data-bs-parent="#accordionFlushExample">
+                          <div class="accordion-body">
+                            <p class="txt-sm2">使用檔案同步和共用服務取得資料位置、管理和隱私的完整控制權，包括支援在所有平台進行公證和電子簽名功能的交易總帳。</p>
+                                <ul>
+                                    <li>檔案公證</li>
+                                    <li>內嵌電子簽名</li>
+                                    <li>獨立檔案驗證</li>
+                                </ul>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingseven">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseseven" aria-expanded="false" aria-controls="flush-collapseseven">
+                        Advanced Management
+                        </button>
+                        </h2>
+                        <div id="flush-collapseseven" class="accordion-collapse collapse" aria-labelledby="flush-headingseven" data-bs-parent="#accordionFlushExample">
+                          <div class="accordion-body">
+                            <p class="txt-sm2">透過修補程式管理，簡化弱點管理並迅速消除了客戶 IT 基礎架構中的漏洞。獲得深入客戶之軟體資產和資料防護的能見度以減輕每日追蹤和規劃工作，並透過監控磁碟機的健康狀況來改善客戶的正常運作時間。</p>
+                            <ul>
+                                <li>修補程式管理</li>
+                                <li>防故障修補</li>
+                                <li>磁碟機健康狀況監控</li>
+                            </ul>
+                            <a class="more-btn" href="https://www.bvtl.com.tw/advanced-management/">瞭解更多</a>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-5 offset-md-1 order-1 order-md-2">
+                <img src="img/avh6r-1x7sp1.png" alt="">
+            </div>
+        </div>
+    </section><hr>
+    <section class="container mb-5">
+        <h2 class="txt-lg txt-bold pb-3">需要協助嗎？</h2>
+        <h3 class="txt-md txt-bold">常見問題集</h3>
+        <div class="row">
+            <div class="col-12"><hr>
+                <div class="accordion accordion-flush" id="accordionFlushExample">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-headingOne-1">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne-1" aria-expanded="false" aria-controls="flush-collapseOne-1">
+                            搭配 Advanced Security 的 Acronis Cyber Protect Cloud 中包含了哪些網路安全性功能？
+
+                        </button>
+                      </h2>
+                      <div id="flush-collapseOne-1" class="accordion-collapse collapse" aria-labelledby="flush-headingOne-1" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <p class="txt-sm2">
+                                Acronis Cyber Protect Cloud 將網路安全、資料防護和安全性管理整合到單一的解決方案中。透過獲獎肯定的 Acronis Active Protection 技術保護客戶資料和端點，此技術已透過 AI 和行爲型反惡意軟體偵測增强。還透過裝置控制提供基本的資料遺失防護 (DLP)，防止資料洩漏。
+                            </p>
+                            <p class="txt-sm2">
+                                此解決方案還透過弱點和安全漏洞評估提供端點防護的完整可見性。
+                            </p>
+                            <p class="txt-sm2">
+                                Advanced Security 藉由 URL 篩選和攻擊預防擴展網路安全解決方案的功能，以抵禦包括 Web 型攻擊和惡意探索試圖等更多威脅。還藉由增强的病毒碼簽章資料庫，提高對已知惡意軟體偵測的速度和準確性。附加元件套件允許在 Acronis Cloud 中對已備份的資料進行更積極的惡意軟體掃描，從而阻止威脅反覆發生。
+                            </p>
+                            <p class="txt-sm2">
+                                透過 Advanced Security，服務供應商還可以更高效地對威脅進行應變。Acronis Cyber Protection Operation Center (CPOC) 會監控威脅態勢，並針對新與威脅發佈警示。防護計畫可根據新與威脅警示自動調節，從而導致發生更頻繁備份或更積極掃描等情況。
+                            </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo-1" aria-expanded="false" aria-controls="flush-collapseTwo-1">
+                            搭配 Advanced Security 的 Acronis Cyber Protect Cloud 是否包含勒索軟體防護功能？
+                        </button>
+                      </h2>
+                      <div id="flush-collapseTwo-1" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo-1" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <p class="txt-sm2">
+                                搭配 Advanced Security 的 Acronis Cyber Protect Cloud 包含基準產品之獲獎肯定的防勒索軟體防護技術。還以端點、伺服器、網路共用和備份中的客戶資料為目標，讓服務供應商針對勒索軟體和加密挖礦程序提供無可比擬的即時防護。Acronis 的勒索軟體防護技術還包含熵分析，能更高效地覆蓋進階勒索軟體威脅。
+                            </p>
+                            <p class="txt-sm2">
+                                讓我們的防勒索軟體技術真正獨一無二的是，它在幾秒内自動復原任何受影響的加密資料，確保無客戶資料遺失。
+                            </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree-1" aria-expanded="false" aria-controls="flush-collapseThree-1">
+                            Advanced Security 新增的進階端點防護是什麽？
+                        </button>
+                      </h2>
+                      <div id="flush-collapseThree-1" class="accordion-collapse collapse" aria-labelledby="flush-headingThree-1" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <p class="txt-sm2">
+                                Advanced Security 藉由進一步改進偵測速度和準確性的增强病毒碼簽章資料庫資料庫，改善了 Acronis Cyber Protect Cloud 的 AI 和行爲型反惡意軟體偵測。
+                            </p>
+                            <p class="txt-sm2">
+                                進階端點防護功能還覆蓋包括 Web 型攻擊和軟體惡意探索試圖在内更大範圍的威脅，確保了全面有效的防護。
+                            </p>
+                            <p class="txt-sm2">
+                                藉由 Advanced Security 附加元件，服務供應商還可以在 Acronis Cloud 中卸載客戶的端點並提供更積極的掃描，確保已備份的資料無惡意軟體。復原流程同樣地受反惡意軟體掃描和防病毒定義檔更新保護。
+                            </p>
+                            <p class="txt-sm2">
+                                Acronis Cyber Protection Operation Center (CPOC) 會監控威脅態勢，並針對惡意軟體、弱點或自然災害等新與威脅發佈警示。智慧防護計畫可自動調整為主動涵蓋這些威脅，大大改善了反應時間。
+                            </p>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="container mb-5">
+        <div class="contactme d-flex justify-content-center">
+            <a class="contact-btn" href="https://www.bvtl.com.tw/contactus/"><i class="fa fa-comments contact-icon"></i>&emsp;<span>聯絡我們</span></a>
+        </div>
+    </section>
+</body>
+</html>
